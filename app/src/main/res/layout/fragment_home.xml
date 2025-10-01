@@ -1,0 +1,75 @@
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Currently Watching"
+            android:textSize="18sp"
+            android:textStyle="bold"/>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rvWatching"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:paddingTop="8dp"
+            android:clipToPadding="false"/>
+
+        <Button
+            android:id="@+id/btnSeeAllWatching"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="See All"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Wishlist"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:paddingTop="16dp"/>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rvWishlist"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:paddingTop="8dp"
+            android:clipToPadding="false"/>
+
+        <Button
+            android:id="@+id/btnSeeAllWishlist"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="See All"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Finished"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:paddingTop="16dp"/>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rvFinished"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:paddingTop="8dp"
+            android:clipToPadding="false"/>
+
+        <Button
+            android:id="@+id/btnSeeAllFinished"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="See All"/>
+
+    </LinearLayout>
+</ScrollView>

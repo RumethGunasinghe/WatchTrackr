@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest
+    package="com.example.watchtrackr"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!-- Permissions -->
+    <uses-permission android:name="android.permission.INTERNET"/>
+
+    <application
+        android:allowBackup="true"
+        android:label="WatchTrackr"
+        android:theme="@style/Theme.WatchTrackr">
+
+        <!-- Activities -->
+        <activity android:name=".ui.manual.ManualAddActivity"/>
+        <activity android:name=".ui.browse.BrowseActivity"/>
+        <activity android:name=".ui.list.ListActivity"/>
+        <activity android:name=".ui.details.MovieDetailsActivity"/>
+
+        <!-- Launcher activity must have exported explicitly set -->
+        <activity
+            android:name=".ui.main.MainActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+        </activity>
+
+    </application>
+</manifest>
