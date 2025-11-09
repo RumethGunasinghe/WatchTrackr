@@ -12,7 +12,7 @@ import java.util.*
 class MovieRepository(context: Context) {
     private val storage = JsonStorage(context)
     private val api = ApiService.create()
-    private val apiKey = "YOUR_OMDB_API_KEY" // replace or move to BuildConfig
+    private val apiKey = "a72a4fc6" // replace or move to BuildConfig
 
     suspend fun loadAllLists(): Triple<List<Movie>, List<Movie>, List<Movie>> =
         withContext(Dispatchers.IO) {
