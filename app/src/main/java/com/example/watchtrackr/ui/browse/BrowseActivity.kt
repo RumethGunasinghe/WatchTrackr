@@ -30,11 +30,19 @@ class BrowseActivity : AppCompatActivity() {
         adapter = MovieAdapter(
             items = mutableListOf(),
             onClick = { movie -> openDetails(movie) },
-            onRemove = { movie -> vm.removeFrom("all", movie.id) } // replace "all" with logic if needed
+            onRemove = { movie -> vm.removeFrom("all", movie.id) }
         )
 
         binding.rvMovies.layoutManager = GridLayoutManager(this, 2)
         binding.rvMovies.adapter = adapter
+
+        // 🔹 Fetch random/default movies on startup
+        val randomKeywords = listOf("Avengers", "Batman", "Star", "King", "Spider", "Love", "War", "Matrix", "Dark", "Future")
+        val randomQuery = randomKeywords.random()
+        doSearch(randomQuery)
+
+        // 🔹 Optional: update search hint to show what’s being shown
+        binding.searchBar.queryHint = "Search movies (showing \"$randomQuery\")"
 
         // SearchView listener
         binding.searchBar.setOnQueryTextListener(object : SearchView.OnQueryTextListener {
