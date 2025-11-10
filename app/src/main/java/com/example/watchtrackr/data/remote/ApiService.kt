@@ -20,10 +20,10 @@ interface ApiService {
 
     companion object {
         fun create(): ApiService {
-            val logger = HttpLoggingInterceptor().apply { level = HttpLoggingInterceptor.Level.BASIC }
+            val logger = HttpLoggingInterceptor().apply { level = HttpLoggingInterceptor.Level.BODY }
             val client = OkHttpClient.Builder().addInterceptor(logger).build()
             val retrofit = Retrofit.Builder()
-                .baseUrl("http://www.omdbapi.com")
+                .baseUrl("https://www.omdbapi.com/")
                 .client(client)
                 .addConverterFactory(GsonConverterFactory.create())
                 .build()
