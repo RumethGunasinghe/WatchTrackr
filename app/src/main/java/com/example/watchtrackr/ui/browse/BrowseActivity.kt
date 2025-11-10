@@ -40,7 +40,7 @@ class BrowseActivity : AppCompatActivity() {
         binding.rvMovies.adapter = adapter
 
         // 🔹 Fetch random/default movies on startup
-        val randomKeywords = listOf("Avengers", "Batman", "Star", "King", "Spider", "Love", "War", "Matrix", "Dark", "Future")
+        val randomKeywords = listOf( "Star", "King","Love", "War", "Matrix", "Dark", "Future")
         val randomQuery = randomKeywords.random()
         doSearch(randomQuery)
 

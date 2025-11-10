@@ -19,7 +19,7 @@ class MovieAdapter(
     class MovieViewHolder(view: View) : RecyclerView.ViewHolder(view) {
         val ivPoster: ImageView = view.findViewById(R.id.ivPoster)
         val tvTitle: TextView = view.findViewById(R.id.tvTitle)
-        val btnRemove: View = view.findViewById(R.id.btnRemove)  // add remove button reference
+//        val btnRemove: View = view.findViewById(R.id.btnRemove)  // add remove button reference
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MovieViewHolder {
@@ -37,7 +37,7 @@ class MovieAdapter(
             .into(holder.ivPoster)
 
         holder.itemView.setOnClickListener { onClick(movie) }
-        holder.btnRemove.setOnClickListener { onRemove(movie) }  // handle remove
+//        holder.btnRemove.setOnClickListener { onRemove(movie) }  // handle remove
     }
 
     override fun getItemCount(): Int = items.size
