@@ -14,6 +14,8 @@ class MainActivity: AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
+        binding.bottomNav.selectedItemId = R.id.nav_home
+
 
         // Load HomeFragment by default
         supportFragmentManager.beginTransaction()

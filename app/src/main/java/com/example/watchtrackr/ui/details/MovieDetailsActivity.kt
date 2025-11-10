@@ -1,5 +1,6 @@
 package com.example.watchtrackr.ui.details
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.View
 import androidx.appcompat.app.AppCompatActivity
@@ -8,6 +9,8 @@ import com.bumptech.glide.Glide
 import com.example.watchtrackr.R
 import com.example.watchtrackr.databinding.ActivityMovieDetailsBinding
 import com.example.watchtrackr.data.models.Movie
+import com.example.watchtrackr.ui.browse.BrowseActivity
+import com.example.watchtrackr.ui.home.HomeFragment
 import com.example.watchtrackr.vm.MainViewModel
 
 class MovieDetailsActivity : AppCompatActivity() {
@@ -42,10 +45,23 @@ class MovieDetailsActivity : AppCompatActivity() {
             binding.btnAddWatching.setOnClickListener { vm.addTo("watching", m) }
             binding.btnAddWishlist.setOnClickListener { vm.addTo("wishlist", m) }
             binding.btnAddFinished.setOnClickListener { vm.addTo("finished", m) }
-            binding.btnRemove.setOnClickListener {
-                vm.removeFrom("watching", m.id)
-                vm.removeFrom("wishlist", m.id)
-                vm.removeFrom("finished", m.id)
+
+
+            binding.bottomNav.setOnItemSelectedListener { item ->
+                when (item.itemId) {
+                    R.id.nav_home -> {
+                        supportFragmentManager.beginTransaction()
+                            .replace(R.id.container, HomeFragment()).commit()
+                        true
+                    }
+
+                    R.id.nav_browse -> {
+                        startActivity(Intent(this, BrowseActivity::class.java))
+                        true
+                    }
+
+                    else -> false
+                }
             }
         }
     }

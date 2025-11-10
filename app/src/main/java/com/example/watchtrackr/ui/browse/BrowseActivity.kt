@@ -6,10 +6,12 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.SearchView
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.GridLayoutManager
+import com.example.watchtrackr.R
 import com.example.watchtrackr.data.models.Movie
 import com.example.watchtrackr.databinding.ActivityBrowseBinding
 import com.example.watchtrackr.ui.adapters.MovieAdapter
 import com.example.watchtrackr.ui.details.MovieDetailsActivity
+import com.example.watchtrackr.ui.home.HomeFragment
 import com.example.watchtrackr.ui.manual.ManualAddActivity
 import com.example.watchtrackr.vm.MainViewModel
 
@@ -23,6 +25,7 @@ class BrowseActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityBrowseBinding.inflate(layoutInflater)
         setContentView(binding.root)
+        binding.bottomNav.selectedItemId = R.id.nav_browse
 
         vm = ViewModelProvider(this).get(MainViewModel::class.java)
 
@@ -81,6 +84,24 @@ class BrowseActivity : AppCompatActivity() {
         vm.error.observe(this) {
             // Show a Toast or Snackbar for errors
         }
+
+        binding.bottomNav.setOnItemSelectedListener { item ->
+            when (item.itemId) {
+                R.id.nav_home -> {
+                    supportFragmentManager.beginTransaction()
+                        .replace(R.id.container, HomeFragment()).commit()
+                    true
+                }
+
+                R.id.nav_browse -> {
+                    startActivity(Intent(this, BrowseActivity::class.java))
+                    true
+                }
+
+                else -> false
+            }
+        }
+
     }
 
     private fun doSearch(query: String) {
