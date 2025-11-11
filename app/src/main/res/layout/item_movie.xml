@@ -31,16 +31,16 @@
             android:ellipsize="end"
             android:singleLine="true"/>
 
-<!--        <Button-->
-<!--            android:id="@+id/btnRemove"-->
-<!--            android:layout_width="wrap_content"-->
-<!--            android:layout_height="wrap_content"-->
-<!--            android:text="Remove"-->
-<!--            android:layout_gravity="end"-->
-<!--            android:padding="4dp"-->
-<!--            android:layout_marginTop="4dp"-->
-<!--            android:backgroundTint="@android:color/holo_red_light"-->
-<!--            android:textColor="@android:color/white"/>-->
+        <Button
+            android:id="@+id/btnRemove"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Remove"
+            android:layout_gravity="end"
+            android:padding="4dp"
+            android:layout_marginTop="4dp"
+            android:backgroundTint="@android:color/holo_red_light"
+            android:textColor="@android:color/white"/>
 
 
     </LinearLayout>

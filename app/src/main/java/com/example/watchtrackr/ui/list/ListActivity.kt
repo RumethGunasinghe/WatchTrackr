@@ -19,6 +19,7 @@ class ListActivity: AppCompatActivity() {
     private lateinit var binding: ActivityListBinding
     private lateinit var vm: MainViewModel
     private lateinit var adapter: MovieAdapter
+    private var fromHome: Boolean = false
     private var listName: String = "wishlist"
 
     override fun onCreate(savedInstanceState: Bundle?){
@@ -28,13 +29,15 @@ class ListActivity: AppCompatActivity() {
 
         vm = ViewModelProvider(this).get(MainViewModel::class.java)
         listName = intent.getStringExtra("listName") ?: "wishlist"
+        fromHome = listName in listOf("wishlist", "watching", "finished")
         title = listName.capitalize()
 
         // RecyclerView setup
         adapter = MovieAdapter(
             mutableListOf(),
             onClick = { openDetails(it) },
-            onRemove = { vm.removeFrom(listName, it.id) }
+            onRemove = { vm.removeFrom(listName, it.id) },
+            showRemove = fromHome
         )
         binding.recycler.layoutManager = LinearLayoutManager(this)
         binding.recycler.adapter = adapter
