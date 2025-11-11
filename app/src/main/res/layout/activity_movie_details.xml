@@ -68,25 +68,31 @@
                     android:id="@+id/btnAddWatching"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
+                    android:layout_margin="10px"
                     android:layout_weight="1"
                     android:backgroundTint="@color/buttonColor"
-                    android:text="Add to Watching"/>
+                    android:text="Add to Watching"
+                    android:textColor="#000000" />
 
                 <Button
                     android:id="@+id/btnAddWishlist"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
+                    android:layout_margin="10px"
                     android:layout_weight="1"
                     android:backgroundTint="@color/buttonColor"
-                    android:text="Add to Wishlist"/>
+                    android:text="Add to Wishlist"
+                    android:textColor="#000000" />
 
                 <Button
                     android:id="@+id/btnAddFinished"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
+                    android:layout_margin="10px"
                     android:layout_weight="1"
                     android:backgroundTint="@color/buttonColor"
-                    android:text="Add to Finished"/>
+                    android:text="Add to Finished"
+                    android:textColor="#000000" />
             </LinearLayout>
 
         </LinearLayout>

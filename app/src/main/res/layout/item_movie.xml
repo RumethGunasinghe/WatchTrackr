@@ -23,11 +23,12 @@
 
         <!-- Title + Remove Button Row -->
         <LinearLayout
-            android:orientation="horizontal"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:paddingTop="8dp"
-            android:gravity="center_vertical">
+            android:background="#FFFFFF"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:paddingTop="8dp">
 
             <!-- Movie Title -->
             <TextView
@@ -35,6 +36,7 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
+                android:background="#FFFFFF"
                 android:ellipsize="end"
                 android:singleLine="true"
                 android:text=""
@@ -46,11 +48,11 @@
                 android:id="@+id/btnRemove"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Remove"
+                android:backgroundTint="@color/cancelButtonColor"
                 android:padding="4dp"
-                android:backgroundTint="@color/buttonColor"
-                android:textColor="@android:color/white"
-                android:visibility="gone"/>
+                android:text="Remove"
+                android:textColor="@android:color/black"
+                android:visibility="gone" />
         </LinearLayout>
 
     </LinearLayout>

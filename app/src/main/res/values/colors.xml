@@ -4,9 +4,11 @@
     <color name="white">#FFFFFFFF</color>myBackgroundColor
     <color name="myBackgroundColor">#141313</color>
     <color name="navColor">#262525</color>
-    <color name="buttonColor">#8A8383</color>
+    <color name="buttonColor">#E4DBDB</color>
+    <color name="deactivatedbuttonColor">#646262</color>
     <color name="colorPrimary">#141313</color>
     <color name="colorPrimaryVariant">#FF000000</color>
+    <color name="cancelButtonColor">#D75252</color>
 
 </resources>
 
