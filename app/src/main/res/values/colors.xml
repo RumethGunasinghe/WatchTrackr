@@ -5,6 +5,8 @@
     <color name="myBackgroundColor">#141313</color>
     <color name="navColor">#262525</color>
     <color name="buttonColor">#504F4F</color>
+    <color name="colorPrimary">#141313</color>
+    <color name="colorPrimaryVariant">#FF000000</color>
 
 </resources>
 

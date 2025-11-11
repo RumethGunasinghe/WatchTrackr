@@ -1,8 +1,7 @@
-<ScrollView
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="wrap_content">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -13,65 +12,77 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:fontFamily="@font/architects_daughter"
             android:text="Currently Watching"
-            android:textSize="18sp"
-            android:textStyle="bold"/>
+            android:textColor="#FFFFFF"
+            android:textSize="34sp"
+            android:textStyle="bold" />
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/rvWatching"
-            android:layout_width="match_parent"
-            android:layout_height="200dp"
-            android:paddingTop="8dp"
-            android:clipToPadding="false"/>
+            android:layout_width="424dp"
+            android:layout_height="179dp"
+            android:layout_gravity="center_horizontal"
+            android:clipToPadding="false"
+            android:paddingTop="8dp" />
 
         <Button
             android:id="@+id/btnSeeAllWatching"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:backgroundTint="@color/buttonColor"
             android:text="See All"
             app:iconTint="@color/buttonColor" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:fontFamily="@font/architects_daughter"
+            android:paddingTop="16dp"
             android:text="Wishlist"
-            android:textSize="18sp"
-            android:textStyle="bold"
-            android:paddingTop="16dp"/>
+            android:textColor="#FFFFFF"
+            android:textSize="34sp"
+            android:textStyle="bold" />
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/rvWishlist"
-            android:layout_width="match_parent"
-            android:layout_height="200dp"
-            android:paddingTop="8dp"
-            android:clipToPadding="false"/>
+            android:layout_width="416dp"
+            android:layout_height="179dp"
+            android:layout_gravity="center_horizontal"
+            android:clipToPadding="false"
+            android:paddingTop="8dp" />
 
         <Button
             android:id="@+id/btnSeeAllWishlist"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="See All"/>
+            android:backgroundTint="@color/buttonColor"
+            android:text="See All" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:fontFamily="@font/architects_daughter"
+            android:paddingTop="16dp"
             android:text="Finished"
-            android:textSize="18sp"
-            android:textStyle="bold"
-            android:paddingTop="16dp"/>
+            android:textColor="#FFFFFF"
+            android:textSize="34sp"
+            android:textStyle="bold" />
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/rvFinished"
-            android:layout_width="match_parent"
-            android:layout_height="200dp"
-            android:paddingTop="8dp"
-            android:clipToPadding="false"/>
+            android:layout_width="421dp"
+            android:layout_height="179dp"
+            android:layout_gravity="center_horizontal"
+            android:clipToPadding="false"
+            android:paddingTop="8dp" />
 
         <Button
             android:id="@+id/btnSeeAllFinished"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="See All"/>
+            android:backgroundTint="@color/buttonColor"
+            android:text="See All" />
 
     </LinearLayout>
 </ScrollView>

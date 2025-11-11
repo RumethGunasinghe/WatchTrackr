@@ -3,5 +3,6 @@
     <style name="Base.Theme.WatchTrackr" parent="Theme.Material3.DayNight.NoActionBar">
         <item name="android:windowBackground">@color/myBackgroundColor</item>
         <item name="android:colorBackground">@color/myBackgroundColor</item>
+        <item name="colorSecondary">@color/buttonColor</item>
     </style>
 </resources>

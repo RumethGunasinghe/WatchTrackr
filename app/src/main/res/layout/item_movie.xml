@@ -13,6 +13,7 @@
         android:layout_height="wrap_content"
         android:padding="8dp">
 
+        <!-- Movie Poster -->
         <ImageView
             android:id="@+id/ivPoster"
             android:layout_width="match_parent"
@@ -20,28 +21,37 @@
             android:scaleType="centerCrop"
             android:contentDescription="@string/movie_poster"/>
 
-        <TextView
-            android:id="@+id/tvTitle"
+        <!-- Title + Remove Button Row -->
+        <LinearLayout
+            android:orientation="horizontal"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Movie Title"
-            android:textSize="16sp"
-            android:textStyle="bold"
-            android:paddingTop="4dp"
-            android:ellipsize="end"
-            android:singleLine="true"/>
+            android:paddingTop="8dp"
+            android:gravity="center_vertical">
 
-        <Button
-            android:id="@+id/btnRemove"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Remove"
-            android:layout_gravity="end"
-            android:padding="4dp"
-            android:layout_marginTop="4dp"
-            android:backgroundTint="@android:color/holo_red_light"
-            android:textColor="@android:color/white"/>
+            <!-- Movie Title -->
+            <TextView
+                android:id="@+id/tvTitle"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:ellipsize="end"
+                android:singleLine="true"
+                android:text=""
+                android:textSize="16sp"
+                android:textStyle="bold" />
 
+            <!-- Remove Button -->
+            <Button
+                android:id="@+id/btnRemove"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Remove"
+                android:padding="4dp"
+                android:backgroundTint="@color/buttonColor"
+                android:textColor="@android:color/white"
+                android:visibility="gone"/>
+        </LinearLayout>
 
     </LinearLayout>
 

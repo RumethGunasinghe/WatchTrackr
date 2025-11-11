@@ -1,6 +1,7 @@
 package com.example.watchtrackr.ui.browse
 
 import android.content.Intent
+import android.graphics.Color
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.SearchView
@@ -26,6 +27,11 @@ class BrowseActivity : AppCompatActivity() {
         binding = ActivityBrowseBinding.inflate(layoutInflater)
         setContentView(binding.root)
         binding.bottomNav.selectedItemId = R.id.nav_browse
+
+        val searchEditText = binding.searchBar.findViewById<androidx.appcompat.widget.SearchView.SearchAutoComplete>(androidx.appcompat.R.id.search_src_text)
+        searchEditText.setTextColor(Color.WHITE)          // typed text color
+        searchEditText.setHintTextColor(Color.LTGRAY)     // hint color
+
 
         vm = ViewModelProvider(this).get(MainViewModel::class.java)
 
