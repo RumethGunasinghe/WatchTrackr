@@ -22,7 +22,7 @@
                 android:id="@+id/ivPoster"
                 android:layout_width="match_parent"
                 android:layout_height="200dp"
-                android:layout_marginTop="70px"
+                android:layout_marginTop="100px"
                 android:contentDescription="@string/movie_poster"
                 android:scaleType="centerCrop" />
 
@@ -31,18 +31,22 @@
                 android:id="@+id/tvTitle"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:paddingTop="8dp"
+                android:textColor="#FFFFFF"
                 android:textSize="20sp"
-                android:textStyle="bold"
-                android:paddingTop="8dp"/>
+                android:textStyle="bold" />
 
             <!-- Movie description -->
             <TextView
                 android:id="@+id/tvDesc"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="239dp"
                 android:layout_marginTop="50px"
-                android:layout_marginBottom="1300px"
-                android:paddingTop="4dp" />
+                android:layout_marginBottom="600px"
+                android:fontFamily="@font/comic_neue_bold"
+                android:paddingTop="4dp"
+                android:textColor="#FFFFFF"
+                android:textSize="20sp" />
 
             <!-- Movie year -->
             <TextView

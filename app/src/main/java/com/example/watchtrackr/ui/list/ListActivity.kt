@@ -30,13 +30,20 @@ class ListActivity: AppCompatActivity() {
         vm = ViewModelProvider(this).get(MainViewModel::class.java)
         listName = intent.getStringExtra("listName") ?: "wishlist"
         fromHome = listName in listOf("wishlist", "watching", "finished")
-        title = listName.capitalize()
+
+        // Set category title on top
+        binding.tvTitle.text = when(listName.lowercase()) {
+            "watching" -> "Watching"
+            "wishlist" -> "Wishlist"
+            "finished" -> "Finished"
+            else -> listName.replaceFirstChar { it.uppercase() }
+        }
 
         // RecyclerView setup
         adapter = MovieAdapter(
             mutableListOf(),
-            onClick = { openDetails(it) },
-            onRemove = { vm.removeFrom(listName, it.id) },
+            onClick = { movie -> openDetails(movie) },  // 🔹 fixed reference
+            onRemove = { movie -> vm.removeFrom(listName, movie.id) },
             showRemove = fromHome
         )
         binding.recycler.layoutManager = LinearLayoutManager(this)
@@ -51,7 +58,7 @@ class ListActivity: AppCompatActivity() {
 
         vm.loadAll()
 
-        // 🔹 BottomNavigationView listener
+        // BottomNavigationView listener
         binding.bottomNav.setOnItemSelectedListener { item ->
             when(item.itemId) {
                 R.id.nav_home -> {
@@ -62,14 +69,12 @@ class ListActivity: AppCompatActivity() {
                     startActivity(Intent(this, BrowseActivity::class.java))
                     true
                 }
-
                 else -> false
             }
         }
-
-
     }
 
+    // 🔹 Add this function at the end of the class
     private fun openDetails(movie: com.example.watchtrackr.data.models.Movie) {
         val intent = Intent(this, MovieDetailsActivity::class.java)
         intent.putExtra("movie", movie)

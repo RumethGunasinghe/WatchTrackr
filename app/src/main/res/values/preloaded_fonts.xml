@@ -3,5 +3,6 @@
     <array name="preloaded_fonts" translatable="false">
         <item>@font/amatica_sc_bold</item>
         <item>@font/architects_daughter</item>
+        <item>@font/comic_neue_bold</item>
     </array>
 </resources>

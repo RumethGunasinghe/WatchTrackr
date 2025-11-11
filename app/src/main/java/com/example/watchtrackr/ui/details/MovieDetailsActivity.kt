@@ -33,7 +33,16 @@ class MovieDetailsActivity : AppCompatActivity() {
 
             title = m.title
             binding.tvTitle.text = m.title
-            binding.tvDesc.text = m.description ?: ""
+            binding.tvDesc.text = """
+                                Genre: Action, Adventure, Comedy
+                            
+                                Director: James Gunn
+                            
+                                Actors: Chris Pratt, Zoe Saldaña, Dave Bautista
+                            
+                                Plot: The Guardians struggle to keep together as a team while dealing with their personal family issues, notably Star-Lord's encounter with his father, the ambitious celestial being Ego.
+""".trimIndent()
+
             binding.tvYear.text = m.year ?: ""
 
             if (!m.thumbnail.isNullOrEmpty()) {
