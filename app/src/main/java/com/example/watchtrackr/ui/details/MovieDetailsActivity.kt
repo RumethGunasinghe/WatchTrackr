@@ -118,6 +118,7 @@ class MovieDetailsActivity : AppCompatActivity() {
             isEnabled = true
             text = "Add to Finished"
             setBackgroundColor(buttonColor)
+            setBackgroundColor(buttonColor)
         }
     }
 }

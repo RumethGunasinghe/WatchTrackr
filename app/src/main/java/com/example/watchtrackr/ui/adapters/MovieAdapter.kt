@@ -1,10 +1,12 @@
 package com.example.watchtrackr.ui.adapters
 
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
+import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.example.watchtrackr.R
@@ -20,6 +22,7 @@ class MovieAdapter(
     companion object {
         private const val TYPE_MOVIE = 0
         private const val TYPE_EMPTY = 1
+        private const val TAG = "MovieAdapter"
     }
 
     class MovieViewHolder(view: View) : RecyclerView.ViewHolder(view) {
@@ -58,13 +61,28 @@ class MovieAdapter(
                 .into(holder.ivPoster)
 
             holder.btnRemove.visibility = if (showRemove) View.VISIBLE else View.GONE
-            holder.itemView.setOnClickListener { onClick(movie) }
-            holder.btnRemove.setOnClickListener { onRemove(movie) }
+
+            // Click listener for the entire item
+            holder.itemView.setOnClickListener {
+                onClick(movie)
+                Toast.makeText(holder.itemView.context, "Clicked: ${movie.title}", Toast.LENGTH_SHORT).show()
+                Log.d(TAG, "Movie clicked: ${movie.title}")
+            }
+
+            // Click listener for remove button
+            holder.btnRemove.setOnClickListener {
+                onRemove(movie)
+                Toast.makeText(holder.itemView.context, "Removed: ${movie.title}", Toast.LENGTH_SHORT).show()
+                Log.d(TAG, "Movie removed: ${movie.title}")
+            }
+
         } else if (holder is EmptyViewHolder) {
             // Load your drawable icon for empty state
             Glide.with(holder.ivEmpty.context)
                 .load(R.drawable.no_items) // <-- your drawable
                 .into(holder.ivEmpty)
+
+            Log.d(TAG, "Empty view displayed")
         }
     }
 
@@ -76,15 +94,12 @@ class MovieAdapter(
         items.clear()
         items.addAll(newItems)
         notifyDataSetChanged()
+        Log.d(TAG, "Items updated. Count: ${items.size}")
     }
 
     fun sortByTitle() {
         items.sortBy { it.title }
         notifyDataSetChanged()
+        Log.d(TAG, "Items sorted by title")
     }
 }
-
-
-
-
-
