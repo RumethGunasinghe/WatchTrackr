@@ -14,25 +14,33 @@
         android:background="@color/myBackgroundColor"
         android:padding="16dp"
         android:clipToPadding="false"
-        android:layout_marginBottom="56dp"> <!-- leave space for nav bar -->
+        android:layout_marginBottom="56dp">
 
-        <!-- Search bar -->
-        <androidx.appcompat.widget.SearchView
-            android:id="@+id/searchBar"
+        <!-- Search + Sort row -->
+        <LinearLayout
+            android:orientation="horizontal"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="70dp"
-            android:queryHint="Search movies" />
+            android:gravity="center_vertical"
+            android:baselineAligned="false">
 
-        <!-- Sort button -->
-        <Button
-            android:id="@+id/btnSort"
-            android:textColor="#000000"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Sort"
-            android:backgroundTint="@color/buttonColor"
-            android:layout_marginTop="8dp"/>
+            <androidx.appcompat.widget.SearchView
+                android:id="@+id/searchBar"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:queryHint="Search movies"
+                android:layout_marginEnd="8dp"/>
+
+            <Button
+                android:id="@+id/btnSort"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Sort"
+                android:textColor="#000000"
+                android:backgroundTint="@color/buttonColor"/>
+        </LinearLayout>
 
         <!-- RecyclerView for movie thumbnails -->
         <androidx.recyclerview.widget.RecyclerView
